@@ -1,1 +1,111 @@
+using System;
+
+public class Computer
+{
+    public string process;
+    public int ram_size;
+    public int HD;
+    public int GC;
+
+    public static void Main(String[] args)
+    {
+        Console.WriteLine("1.Desktop");
+        Console.WriteLine("2.Laptop");
+        Console.WriteLine("Choose the option");
+        int choice = int.Parse(Console.ReadLine());
+
+        if (choice == 1)
+        {
+            Desktop d = new Desktop();
+
+            Console.WriteLine("Enter the processor");
+            d.process = Console.ReadLine();
+
+            Console.WriteLine("Enter the ram size");
+            d.ram_size = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the hard disk size");
+            d.HD = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the graphic card size");
+            d.GC = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the monitor size");
+            d.mon_size = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the power supply volt");
+            d.PSV = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Desktop price is " + d.DesktopPriceCalculation());
+        }
+        else if (choice == 2)
+        {
+            Laptop l = new Laptop();
+
+            Console.WriteLine("Enter the processor");
+            l.process = Console.ReadLine();
+
+            Console.WriteLine("Enter the ram size");
+            l.ram_size = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the hard disk size");
+            l.HD = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the graphic card size");
+            l.GC = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the display size");
+            l.dis_size = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the battery volt");
+            l.BV = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Laptop price is " + l.LaptopPriceCalculation());
+        }
+    }
+}
+
+public class Desktop : Computer
+{
+    public int mon_size;
+    public int PSV;
+
+    public double DesktopPriceCalculation()
+    {
+        int Process_cost = 0;
+
+        if (process.Equals("i3"))
+            Process_cost = 1500;
+        else if (process.Equals("i5"))
+            Process_cost = 3000;
+        else if (process.Equals("i7"))
+            Process_cost = 4500;
+
+        double Desktop_Price =Process_cost +(ram_size * 200) +(HD * 1500) +(GC * 2500) +(mon_size * 250) +(PSV * 20);
+
+        return Desktop_Price;
+    }
+}
+
+public class Laptop : Computer
+{
+    public int dis_size;
+    public int BV;
+
+    public double LaptopPriceCalculation()
+    {
+        int Process_cost = 0;
+
+        if (process.Equals("i3"))
+            Process_cost = 2500;
+        else if (process.Equals("i5"))
+            Process_cost = 5000;
+        else if (process.Equals("i7"))
+            Process_cost = 6500;
+
+        double LaptopPrice =Process_cost +(ram_size * 200) +(HD * 1500) +(GC * 2500) +(dis_size * 250) +(BV * 20);
+
+        return LaptopPrice;
+    }
+}
 
