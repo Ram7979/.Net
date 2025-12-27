@@ -1,93 +1,77 @@
 using System;
-
 public class SaleTransaction{
-    public string InvoiceNo { get; set; } = string.Empty;
-    public string CustomerName { get; set; } = string.Empty;
-    public string ItemName { get; set; } = string.Empty;
+    public string InvoiceNo { get; set; }
+    public string CustomerName { get; set; }
+    public string ItemName { get; set; }
     public int Quantity { get; set; }
     public decimal PurchaseAmount { get; set; }
     public decimal SellingAmount { get; set; }
-    public string ProfitOrLossStatus { get; set; } = string.Empty;
+    public string ProfitOrLossStatus { get; set; }
     public decimal ProfitOrLossAmount { get; set; }
     public decimal ProfitMarginPercent { get; set; }
-
-    static SaleTransaction? LastTransaction = null;
+    static SaleTransaction LastTransaction = null;
     static bool HasLastTransaction = false;
-
     public static void Register(){
-        SaleTransaction SObj = new SaleTransaction();
+        SaleTransaction Sobj = new SaleTransaction();
 
         Console.Write("Enter Invoice No: ");
-        var invoiceInput = Console.ReadLine();
-        if (string.IsNullOrWhiteSpace(invoiceInput)){
+        Sobj.InvoiceNo = Console.ReadLine();
+        if (Sobj.InvoiceNo == ""){
             Console.WriteLine("Invoice No cannot be empty");
             return;
         }
-        SObj.InvoiceNo = invoiceInput;
 
         Console.Write("Enter Customer Name: ");
-        var customerInput = Console.ReadLine();
-        SObj.CustomerName = customerInput ?? string.Empty;
+        Sobj.CustomerName = Console.ReadLine();
 
         Console.Write("Enter Item Name: ");
-        var itemInput = Console.ReadLine();
-        SObj.ItemName = itemInput ?? string.Empty;
+        Sobj.ItemName = Console.ReadLine();
 
         Console.Write("Enter Quantity: ");
-        var qtyInput = Console.ReadLine();
-        int qtyParsed;
-        if(!int.TryParse(qtyInput, out qtyParsed) || qtyParsed <= 0){
+        if (!int.TryParse(Console.ReadLine(), out Sobj.Quantity) || Sobj.Quantity <= 0){
             Console.WriteLine("Quantity must be greater than zero");
             return;
         }
-        SObj.Quantity = qtyParsed;
 
         Console.Write("Enter Purchase Amount (total): ");
-        var purchaseInput = Console.ReadLine();
-        decimal purchaseParsed;
-        if(!decimal.TryParse(purchaseInput, out purchaseParsed) || purchaseParsed <= 0){
+        if (!decimal.TryParse(Console.ReadLine(), out Sobj.PurchaseAmount) || Sobj.PurchaseAmount <= 0){
             Console.WriteLine("Purchase Amount must be greater than zero");
             return;
         }
-        SObj.PurchaseAmount = purchaseParsed;
 
         Console.Write("Enter Selling Amount (total): ");
-        var sellingInput = Console.ReadLine();
-        decimal sellingParsed;
-        if(!decimal.TryParse(sellingInput, out sellingParsed) || sellingParsed < 0){
+        if (!decimal.TryParse(Console.ReadLine(), out Sobj.SellingAmount) || Sobj.SellingAmount < 0){
             Console.WriteLine("Selling Amount must be zero or positive");
             return;
         }
-        SObj.SellingAmount = sellingParsed;
-
-        if(SObj.SellingAmount > SObj.PurchaseAmount){
-            SObj.ProfitOrLossStatus = "PROFIT";
-            SObj.ProfitOrLossAmount = SObj.SellingAmount - SObj.PurchaseAmount;
+        if (Sobj.SellingAmount > Sobj.PurchaseAmount){
+            Sobj.ProfitOrLossStatus = "PROFIT";
+            Sobj.ProfitOrLossAmount = Sobj.SellingAmount - Sobj.PurchaseAmount;
         }
-        else if(SObj.SellingAmount < SObj.PurchaseAmount){
-            SObj.ProfitOrLossStatus = "LOSS";
-            SObj.ProfitOrLossAmount = SObj.PurchaseAmount - SObj.SellingAmount;
+        else if (obj.SellingAmount < obj.PurchaseAmount){
+            Sobj.ProfitOrLossStatus = "LOSS";
+            Sobj.ProfitOrLossAmount = Sobj.PurchaseAmount - Sobj.SellingAmount;
         }
-        else{
-            SObj.ProfitOrLossStatus = "BREAK-EVEN";
-            SObj.ProfitOrLossAmount = 0;
+        else
+        {
+            Sobj.ProfitOrLossStatus = "BREAK-EVEN";
+            Sobj.ProfitOrLossAmount = 0;
         }
 
-        SObj.ProfitMarginPercent = SObj.PurchaseAmount != 0 ? (SObj.ProfitOrLossAmount / SObj.PurchaseAmount) * 100 : 0;
+        Sobj.ProfitMarginPercent =(Sobj.ProfitOrLossAmount / Sobj.PurchaseAmount) * 100;
 
-        LastTransaction = SObj;
+        LastTransaction = Sobj;
         HasLastTransaction = true;
 
         Console.WriteLine("\nTransaction saved successfully.");
-        Console.WriteLine("Status: " + SObj.ProfitOrLossStatus);
-        Console.WriteLine("Profit/Loss Amount: " + SObj.ProfitOrLossAmount);
-        Console.WriteLine("Profit Margin (%): " + SObj.ProfitMarginPercent);
+        Console.WriteLine("Status: " + Sobj.ProfitOrLossStatus);
+        Console.WriteLine("Profit/Loss Amount: " + Sobj.ProfitOrLossAmount);
+        Console.WriteLine("Profit Margin (%): " + Sobj.ProfitMarginPercent);
     }
 
     public static void View(){
-        if (!HasLastTransaction)
-        {
-            Console.WriteLine("No transaction available. Please create a new transaction first.");
+        if (!HasLastTransaction){
+            Console.WriteLine("No transaction available. Please create a new transaction first");
             return;
         }
 
@@ -104,25 +88,25 @@ public class SaleTransaction{
     }
 
     public static void Calculate(){
-        if(!HasLastTransaction){
-            Console.WriteLine("No transaction available. Please create a new transaction first");
+        if (!HasLastTransaction){
+            Console.WriteLine("No transaction available. Please create a new transaction first.");
             return;
         }
 
-        if(LastTransaction.SellingAmount > LastTransaction.PurchaseAmount){
+        if (LastTransaction.SellingAmount > LastTransaction.PurchaseAmount){
             LastTransaction.ProfitOrLossStatus = "PROFIT";
             LastTransaction.ProfitOrLossAmount = LastTransaction.SellingAmount - LastTransaction.PurchaseAmount;
         }
         else if (LastTransaction.SellingAmount < LastTransaction.PurchaseAmount){
             LastTransaction.ProfitOrLossStatus = "LOSS";
-            LastTransaction.ProfitOrLossAmount = LastTransaction.PurchaseAmount - LastTransaction.SellingAmount;
+            LastTransaction.ProfitOrLossAmount =LastTransaction.PurchaseAmount - LastTransaction.SellingAmount;
         }
         else{
             LastTransaction.ProfitOrLossStatus = "BREAK-EVEN";
             LastTransaction.ProfitOrLossAmount = 0;
         }
 
-        LastTransaction.ProfitMarginPercent = (LastTransaction.ProfitOrLossAmount / LastTransaction.PurchaseAmount) * 100;
+        LastTransaction.ProfitMarginPercent =(LastTransaction.ProfitOrLossAmount / LastTransaction.PurchaseAmount) * 100;
 
         Console.WriteLine("\nRecalculated Result:");
         Console.WriteLine("Status: " + LastTransaction.ProfitOrLossStatus);
@@ -131,7 +115,8 @@ public class SaleTransaction{
     }
 
     public static void Main(string[] args){
-        while (true){
+        while (true)
+        {
             Console.WriteLine("\n================== QuickMart Traders ==================");
             Console.WriteLine("1. Create New Transaction (Enter Purchase & Selling Details)");
             Console.WriteLine("2. View Last Transaction");
@@ -139,25 +124,22 @@ public class SaleTransaction{
             Console.WriteLine("4. Exit");
             Console.Write("Enter your option: ");
 
-            string? choice = Console.ReadLine();
+            string choice = Console.ReadLine();
 
-            switch (choice){
+            switch (choice)
+            {
                 case "1":
                     Register();
                     break;
-
                 case "2":
                     View();
                     break;
-
                 case "3":
                     Calculate();
                     break;
-
                 case "4":
                     Console.WriteLine("Thank you. Application closed normally");
                     return;
-
                 default:
                     Console.WriteLine("Invalid option");
                     break;
