@@ -1,0 +1,14 @@
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\obj\Debug\net10.0\swap2numbers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\obj\Debug\net10.0\swap2numbers.AssemblyInfoInputs.cache
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\obj\Debug\net10.0\swap2numbers.AssemblyInfo.cs
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\obj\Debug\net10.0\swap2numbers.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\bin\Debug\net10.0\swap2numbers.exe
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\bin\Debug\net10.0\swap2numbers.deps.json
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\bin\Debug\net10.0\swap2numbers.runtimeconfig.json
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\bin\Debug\net10.0\swap2numbers.dll
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\bin\Debug\net10.0\swap2numbers.pdb
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\obj\Debug\net10.0\swap2numbers.dll
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\obj\Debug\net10.0\refint\swap2numbers.dll
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\obj\Debug\net10.0\swap2numbers.pdb
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\obj\Debug\net10.0\swap2numbers.genruntimeconfig.cache
+C:\Users\HP\Documents\c#\swap2numbers\swap2numbers\obj\Debug\net10.0\ref\swap2numbers.dll

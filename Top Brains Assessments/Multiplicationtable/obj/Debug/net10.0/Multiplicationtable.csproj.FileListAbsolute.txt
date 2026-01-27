@@ -1,0 +1,14 @@
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\obj\Debug\net10.0\Multiplicationtable.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\obj\Debug\net10.0\Multiplicationtable.AssemblyInfoInputs.cache
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\obj\Debug\net10.0\Multiplicationtable.AssemblyInfo.cs
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\obj\Debug\net10.0\Multiplicationtable.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\bin\Debug\net10.0\Multiplicationtable.exe
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\bin\Debug\net10.0\Multiplicationtable.deps.json
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\bin\Debug\net10.0\Multiplicationtable.runtimeconfig.json
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\bin\Debug\net10.0\Multiplicationtable.dll
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\bin\Debug\net10.0\Multiplicationtable.pdb
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\obj\Debug\net10.0\Multiplicationtable.dll
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\obj\Debug\net10.0\refint\Multiplicationtable.dll
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\obj\Debug\net10.0\Multiplicationtable.pdb
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\obj\Debug\net10.0\Multiplicationtable.genruntimeconfig.cache
+C:\Users\HP\Documents\c#\Top Brains Assessments\Multiplicationtable\obj\Debug\net10.0\ref\Multiplicationtable.dll
