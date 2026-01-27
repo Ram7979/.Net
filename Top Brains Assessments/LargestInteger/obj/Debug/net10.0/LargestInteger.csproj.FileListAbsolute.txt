@@ -1,0 +1,14 @@
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\obj\Debug\net10.0\LargestInteger.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\obj\Debug\net10.0\LargestInteger.AssemblyInfoInputs.cache
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\obj\Debug\net10.0\LargestInteger.AssemblyInfo.cs
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\obj\Debug\net10.0\LargestInteger.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\bin\Debug\net10.0\LargestInteger.exe
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\bin\Debug\net10.0\LargestInteger.deps.json
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\bin\Debug\net10.0\LargestInteger.runtimeconfig.json
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\bin\Debug\net10.0\LargestInteger.dll
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\bin\Debug\net10.0\LargestInteger.pdb
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\obj\Debug\net10.0\LargestInteger.dll
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\obj\Debug\net10.0\refint\LargestInteger.dll
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\obj\Debug\net10.0\LargestInteger.pdb
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\obj\Debug\net10.0\LargestInteger.genruntimeconfig.cache
+C:\Users\HP\Documents\c#\Top Brains Assessments\LargestInteger\obj\Debug\net10.0\ref\LargestInteger.dll
