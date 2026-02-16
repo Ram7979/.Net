@@ -1,0 +1,318 @@
+using System;
+public class landAnimal{
+    public int legs{set; get;}
+    public void eyes(){
+        Console.WriteLine("Two eyes to all....");
+        
+    }
+    
+}
+public class Dog:landAnimal{
+    public void bark(){
+        Console.WriteLine("it will bow bow");
+        
+    }
+    
+}
+public class Program{
+    public static void Main(string[] args){
+        ///Summary: we can hold parent class objects with the PARENT CLASS REFERANCE and we can call only the parent class Members///
+        
+        ///landAnimal la = new landAnimal();->>> this only work for to call the parent class members(variable, methods, properties.) 
+        
+        
+        ///Summary: we can hold CHILD class objects with the PARENT CLASS REFERANCE and we can call only the parent class Members///
+        landAnimal la = new Dog();
+        la.eyes();
+        
+         ///Summary: we can hold CHILD class objects with the CHILD CLASS REFERANCE and we can call both the parent class and child class Members(COMPLETE ACCESS OF BOTH CHILD AND PARENT CLASSES)///
+        Dog d = new Dog();
+        d.bark();
+        d.eyes();
+        la.legs = 4;
+        Console.WriteLine(la.legs);
+
+
+////Summary:: but ww cant hold the parent class object with child class Reference, if try to access the fields we get compilation error////
+        
+        
+    }
+}
+
+
+
+
+
+/*************************Constructor Inheritance (Calling Base Constructor)************************/
+
+using System;
+public class landAnimal{
+    public int legs{set; get;}
+    public void eyes(){
+        Console.WriteLine("Two eyes to all....");
+        
+    }
+    public landAnimal(string nose){
+        Console.WriteLine(nose+" nose land animal");
+        
+    }
+    
+}
+public class Dog:landAnimal{
+    public Dog():base("one"){
+        Console.WriteLine("one Dog Nose is called");
+        
+        
+    }
+    public void bark(){
+        Console.WriteLine("it will bow bow");
+        
+    }
+    
+}
+public class cat:landAnimal{
+    public cat():base("one"){
+        Console.WriteLine("Constructor Inheritance (Calling Base Constructor) by using BASE keyword");
+    }
+}
+public class Program{
+    public static void Main(string[] args){
+        
+        landAnimal la = new cat();
+        // la.eyes();
+        
+        // Dog d = new Dog();
+        // d.bark();
+        // d.eyes();
+        la.legs = 4;
+        Console.WriteLine(la.legs);
+        cat c = new cat();
+            
+    }
+}
+
+
+/*****************************Method Overriding (Runtime Polymorphism)***************************************/
+
+Parent method must be virtual.
+Child method must be override.
+
+class Animal
+{
+    public virtual void Sound()
+    {
+        Console.WriteLine("Animal makes sound");
+    }
+}
+
+class Dog : Animal
+{
+    public override void Sound()
+    {
+        Console.WriteLine("Dog barks");
+    }
+}
+
+
+/****************************Using base Keyword to Access Parent Method*****************************/
+class Animal
+{
+    public virtual void Sound()
+    {
+        Console.WriteLine("Animal sound");
+    }
+}
+
+class Dog : Animal
+{
+    public override void Sound()
+    {
+        base.Sound();   // call parent method
+        Console.WriteLine("Dog bark");
+    }
+}
+
+
+/****************************** Method Hiding (new keyword)*******************************/
+
+Instead of override, you can hide.
+
+class Animal
+{
+    public void Sound()
+    {
+        Console.WriteLine("Animal sound");
+    }
+}
+
+class Dog : Animal
+{
+    public new void Sound()
+    {
+        Console.WriteLine("Dog bark");
+    }
+}
+
+
+⚠ This is compile-time behavior, not polymorphism.
+
+
+
+/************************* Multilevel Inheritance ************************/
+
+Chain of inheritance.
+
+class Animal
+{
+    public void Eat() {}
+}
+
+class Dog : Animal
+{
+    public void Bark() {}
+}
+
+class Puppy : Dog
+{
+    public void Weep() {}
+}
+
+
+Hierarchy:
+Animal → Dog → Puppy
+
+
+/**************************Hierarchical Inheritance******************************/
+
+One parent → multiple children.
+
+class Animal
+{
+    public void Eat() {}
+}
+
+class Dog : Animal {}
+class Cat : Animal {}
+class Cow : Animal {}
+
+
+/***************************Abstract Classes and Methods*****************************/
+
+---------->Cannot be Instantiated: You cannot create a direct object of an abstract class using the new keyword.
+---------->Serves as a Base Class: Its primary purpose is for inheritance, where other classes (concrete classes) derive from it.
+---------->Abstract Methods/Properties: It can contain methods and properties marked with the abstract keyword, which have no implementation (no method body) in the abstract class itself.
+---------->Abstract class = IS-A relationship with shared behavior
+
+***IN this Abstract calss act as the Base class for the rest of the classes and Abstract method is a method that doent contain body (just the decleration) and that it was implemented in the Derived(Child) Class.
+
+using System;
+
+// Define an abstract class
+public abstract class Animal
+{
+    // Abstract method (no body) - must be implemented by derived classes
+    public abstract void MakeSound();
+
+    // Non-abstract method (with body) - can be used directly by derived classes
+    public void Sleep()
+    {
+        Console.WriteLine("Zzz");
+    }
+}
+
+// A concrete class that inherits from Animal
+public class Dog : Animal
+{
+    // Provide implementation for the abstract method using the override keyword
+    public override void MakeSound()
+    {
+        Console.WriteLine("The dog says: Woof Woof");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Cannot create an instance of the abstract class Animal
+        // Animal myAnimal = new Animal(); // This would cause a compile error
+
+        // Create an instance of the derived class
+        Dog myDog = new Dog();
+
+        // Call the overridden abstract method
+        myDog.MakeSound(); // Output: The dog says: Woof Woof
+
+        // Call the non-abstract method from the base class
+        myDog.Sleep(); // Output: Zzz
+    }
+}
+
+
+/******************Interfaces****************/
+
+-------------->We can achieve multiple inheritance with the interface but not with the classes.
+-------------->We can implement multiple interfaces in a single class separated by commas.
+
+public interface IPolygon
+{
+    // Interface methods do not have a body (before C# 8.0)
+    void CalculateArea(int a, int b); 
+
+    // Interface properties
+    int NumberOfSides { get; set; } 
+}
+public class Rectangle : IPolygon // Class implements the interface
+{
+    private int numberOfSides = 4;
+
+    // Implementation of the interface method
+    public void CalculateArea(int a, int b)
+    {
+        Console.WriteLine($"Area of Rectangle: {a * b}");
+    }
+
+    // Implementation of the interface property
+    public int NumberOfSides
+    {
+        get { return numberOfSides; }
+        set { numberOfSides = value; }
+    }
+}
+
+/**********************Sealed Class (Cannot be inherited)*****/////
+sealed class Animal {}
+
+class Dog : Animal {}  // ❌ error
+
+///////******************* Sealed Method (Cannot override further)******************/
+class Animal
+{
+    public virtual void Sound() {}
+}
+
+class Dog : Animal
+{
+    public sealed override void Sound() {}
+}
+
+class Puppy : Dog
+{
+    public override void Sound() {} // ❌ error
+}
+
+/******************Accessing Parent Class Object (Upcasting)*******/
+Animal a = new Dog();
+a.Sound();
+
+
+This is runtime polymorphism.
+
+/*****************Downcasting****************/
+Animal a = new Dog();
+Dog d = (Dog)a;
+
+
+Safe version:
+
+Dog d = a as Dog;
