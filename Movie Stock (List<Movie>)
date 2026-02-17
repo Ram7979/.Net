@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+public class Movie{
+    public string Title{set; get;}
+    public string Artist{set; get;}
+    public string Genre{set; get;}
+    public int Ratings{set; get;}
+    
+    public Movie(string Title,string Artist,string Genre,int Ratings){
+        this.Title=Title;
+    }
+}
+public class MovieStockUtility{
+    List<Movie> movieList = new List<Movie>();
+    
+    public void AddMovie(string movieDetails){
+        string[] strarr = movieDetails.Split(",");
+        Movie m = new Movie(strarr[0], strarr[1], strarr[2], int.Parse(strarr[3]))
+        movieList.Add(m);
+    }
+    public List<Movie> ViewMoviesByGenre(string genre){
+        List<Movie> lst = new List<Movie>();
+        foreach(var item in movieList){
+            if(item.Genre == genre){
+                lst.Add(item)
+            }
+        }
+        return lst;
+        return movieList.Where(n=>n.Genre==genre).ToList();
+    }
+}
+
+public class Program{
+    public static void Main(string[] args){
+        string movieDetails = Console.ReadLine();//salar, prabash, action,10;
+        MovieStockUtility mu = new MovieStockUtility();
+        mu.AddMovie(movieDetails);
+        string genre=Console.ReadLine();
+        var list=mu.ViewMoviesByGenre(genre);
+        foreach(var item in list){
+            Console.WriteLine($"{item.Title} - {item.Genre}");
+        }
+        
+    }
+}
