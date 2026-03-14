@@ -1,0 +1,14 @@
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\obj\Debug\net10.0\StudentManagementSystemConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\obj\Debug\net10.0\StudentManagementSystemConsole.AssemblyInfoInputs.cache
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\obj\Debug\net10.0\StudentManagementSystemConsole.AssemblyInfo.cs
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\obj\Debug\net10.0\StudentManagementSystemConsole.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\bin\Debug\net10.0\StudentManagementSystemConsole.exe
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\bin\Debug\net10.0\StudentManagementSystemConsole.deps.json
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\bin\Debug\net10.0\StudentManagementSystemConsole.runtimeconfig.json
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\bin\Debug\net10.0\StudentManagementSystemConsole.dll
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\bin\Debug\net10.0\StudentManagementSystemConsole.pdb
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\obj\Debug\net10.0\StudentManagementSystemConsole.dll
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\obj\Debug\net10.0\refint\StudentManagementSystemConsole.dll
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\obj\Debug\net10.0\StudentManagementSystemConsole.pdb
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\obj\Debug\net10.0\StudentManagementSystemConsole.genruntimeconfig.cache
+C:\Users\HP\Documents\c#\StudentManagementSystem\StudentManagementSystemConsole\obj\Debug\net10.0\ref\StudentManagementSystemConsole.dll
